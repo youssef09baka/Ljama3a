@@ -141,4 +141,74 @@ input[type="password"]:focus {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+<<<<<<< HEAD
 /* ----------*
+=======
+/* ---------- Options ---------- */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+input[type="checkbox"] {
+  accent-color: #00ffff;
+}
+
+.forgot {
+  color: #00ffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Bouton ---------- */
+.btn {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #0077ff, #8000ff);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 450px) {
+  .card {
+    width: 90%;
+    padding: 1.8rem;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .card-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+#gigjgejgoejgoejgoejgo
+>>>>>>> youssef
