@@ -1,214 +1,146 @@
-/* ---------- Base ---------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-html, body {
-  height: 100%;
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at 20% 20%, #0d0d0d, #000000 70%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+body {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url("asset/bmw.jpg") no-repeat center center;
+
+
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
-/* ---------- Fond animé ---------- */
-body::before {
-  content: "";
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(
-    from 180deg at 50% 50%,
-    #00ffff,
-    #0077ff,
-    #8000ff,
-    #00ffff
-  );
-  animation: rotate 15s linear infinite;
-  z-index: -2;
-  opacity: 0.15;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 0;
 }
 
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* ---------- Carte ---------- */
 .card {
-  background: rgba(20, 20, 30, 0.8);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
-  padding: 2.5rem;
-  width: 380px;
-  backdrop-filter: blur(15px);
-  transition: 0.4s ease;
-}
-
-.card:hover {
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
-  transform: translateY(-5px);
-}
-
-/* ---------- Logo / Nom de l'entreprise ---------- */
-.brand {
-  text-align: center;
-  margin-bottom: 1.8rem;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 40px 45px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
 }
 
 .brand-name {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.2rem;
-  color: #00ffff;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
-
 .brand-name span {
-  color: #8000ff;
-  text-shadow: 0 0 15px rgba(128, 0, 255, 0.8);
+    color: #00bcd4;
 }
-
 .brand-slogan {
-  font-size: 0.9rem;
-  color: #aaa;
-  letter-spacing: 1px;
-  margin-top: 0.3rem;
-  font-style: italic;
-}
-
-/* ---------- En-tête ---------- */
-.card-header {
-  text-align: center;
-  margin-bottom: 2rem;
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-bottom: 25px;
 }
 
 .card-header h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.8rem;
-  color: #00ffff;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    font-size: 24px;
+    margin-bottom: 5px;
 }
-
 .card-header p {
-  color: #aaa;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-/* ---------- Formulaire ---------- */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+    font-size: 14px;
+    color: #bdbdbd;
+    margin-bottom: 25px;
 }
 
 .field {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.field .label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #e0e0e0;
+}
+.field input {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+.field input:focus {
+    background: rgba(255, 255, 255, 0.25);
 }
 
-.label {
-  margin-bottom: 0.4rem;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-input[type="email"],
-input[type="password"] {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  border-radius: 10px;
-  padding: 0.8rem;
-  font-size: 1rem;
-  color: #fff;
-  transition: 0.3s;
-  outline: none;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #00ffff;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-}
-
-<<<<<<< HEAD
-/* ----------*
-=======
-/* ---------- Options ---------- */
 .options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.options input[type="checkbox"] {
+    accent-color: #00bcd4;
+}
+.options .forgot {
+    color: #00bcd4;
+    text-decoration: none;
+}
+.options .forgot:hover {
+    text-decoration: underline;
 }
 
-.remember {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-input[type="checkbox"] {
-  accent-color: #00ffff;
-}
-
-.forgot {
-  color: #00ffff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.forgot:hover {
-  text-decoration: underline;
-}
-
-/* ---------- Bouton ---------- */
 .btn {
-  background: linear-gradient(90deg, #00ffff, #0077ff);
-  color: #000;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  padding: 0.8rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: 0.4s;
-  text-transform: uppercase;
+    width: 100%;
+    background: #00bcd4;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
-
 .btn:hover {
-  background: linear-gradient(90deg, #0077ff, #8000ff);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-  transform: translateY(-2px);
+    background: #0097a7;
+    transform: scale(1.03);
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 450px) {
-  .card {
-    width: 90%;
-    padding: 1.8rem;
-  }
-
-  .brand-name {
-    font-size: 1.8rem;
-  }
-
-  .card-header h1 {
-    font-size: 1.5rem;
-  }
+.register {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 25px;
 }
-
-#gigjgejgoejgoejgoejgo
->>>>>>> youssef
+.register a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+.register a:hover {
+    text-decoration: underline;
+}
