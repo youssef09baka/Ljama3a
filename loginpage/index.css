@@ -144,3 +144,61 @@ body {
 .register a:hover {
     text-decoration: underline;
 }
+
+/* Version mobile */
+@media (max-width: 480px) {
+    body {
+        background-size: cover; /* reste adapté */
+        padding: 20px; /* espace autour */
+    }
+
+    .card {
+        width: 90%; /* prend presque toute la largeur */
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .brand-name {
+        font-size: 24px;
+    }
+
+    .brand-slogan {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .card-header h1 {
+        font-size: 20px;
+    }
+
+    .card-header p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .field .label {
+        font-size: 12px;
+    }
+
+    .field input {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .register {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+}
