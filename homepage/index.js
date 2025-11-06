@@ -1,17 +1,12 @@
-// Message d'accueil
-window.onload = function() {
-  console.log("Bienvenue sur AutoRent 🚗 !");
-};
 
-// Bouton “Commencer maintenant”
-document.getElementById("btnStart").addEventListener("click", () => {
-  alert("Bienvenue sur AutoRent ! Explorez nos voitures disponibles.");
+document.querySelectorAll('.btn-louer').forEach(button => {
+  button.addEventListener('click', () => {
+    alert("✅ Merci pour votre intérêt ! Un agent AutoRent vous contactera sous peu pour finaliser votre réservation.");
+  });
 });
 
-// Boutons “Louer”
-const boutonsLouer = document.querySelectorAll(".btn-louer");
-boutonsLouer.forEach(btn => {
-  btn.addEventListener("click", () => {
-    alert("Merci ! Notre agent vous contactera pour finaliser la réservation.");
-  });
+
+document.querySelector('a[href="#cars"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('#cars').scrollIntoView({ behavior: 'smooth' });
 });
