@@ -55,23 +55,30 @@ payer.addEventListener('click', () => {
   }
 });
 
-// 📱 Menu latéral coulissant
+// 📱 MENU BURGER MOBILE
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
+// Ouvrir / fermer le menu
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
   document.body.classList.toggle('menu-open');
 });
 
-// ✅ Fermer le menu en cliquant sur un lien
-document.querySelectorAll('.nav-link').forEach(link => {
+// ✅ Fermer le menu après clic sur un lien
+navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', (e) => {
-    // Si le lien est interne (ex: #cars), on défile vers la section
-    if (link.getAttribute('href').startsWith('#')) {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      // Si le lien est interne (#cars, etc.), on défile vers la section
       e.preventDefault();
-      const section = document.querySelector(link.getAttribute('href'));
-      if (section) section.scrollIntoView({ behavior: 'smooth' });
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Si c’est un lien externe (/Login/index.html), on redirige normalement
+      window.location.href = href;
     }
     // Fermer le menu après le clic
     navLinks.classList.remove('active');
