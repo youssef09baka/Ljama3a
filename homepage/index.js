@@ -14,4 +14,6 @@ boutonsLouer.forEach(btn => {
   btn.addEventListener("click", () => {
     alert("Merci ! Notre agent vous contactera pour finaliser la réservation.");
   });
+
+  
 });
