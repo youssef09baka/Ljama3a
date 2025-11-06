@@ -182,81 +182,11 @@ footer {
   margin-top: 40px;
 }
 
-/* === VERSION MOBILE === */
-@media (max-width: 768px) {
-  /* Navigation mobile */
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    flex-direction: column;
-    text-align: center;
-    display: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 20;
-  }
-
-  .nav-links li {
-    padding: 15px 0;
-  }
-
-  /* Bouton menu burger */
-  .menu-toggle {
-    display: block;
-    font-size: 26px;
-    cursor: pointer;
-  }
-
-  /* Quand le menu est ouvert */
-  .nav-links.active {
-    display: flex;
-  }
-
-  /* Cacher les liens desktop par défaut */
-  .nav-links a {
-    font-size: 18px;
-  }
-
-  /* Ajustement du conteneur de voitures */
-  .cars-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .car-card {
-    width: 90%;
-  }
-
-  /* Ajustement du bouton panier */
-  .btn-panier {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-
-  /* Le panier prend toute la largeur sur mobile */
-  .panier {
-    width: 100%;
-  }
-
-  /* Ajustement du texte hero */
-  .hero {
-    padding: 80px 10px;
-  }
-
-  .hero h2 {
-    font-size: 22px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-}
-
-/* === BOUTON BURGER === */
+/* === MENU BURGER ET BARRE LATÉRALE === */
 .menu-toggle {
-  display: none; /* Caché sur PC */
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 /* Affiché uniquement sur mobile */
@@ -264,5 +194,41 @@ footer {
   .menu-toggle {
     display: block;
   }
-}
 
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-left: 20px;
+    gap: 25px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 200;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+  }
+}
