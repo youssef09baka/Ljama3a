@@ -54,3 +54,11 @@ payer.addEventListener('click', () => {
     alert("⚠️ Votre panier est vide. Ajoutez d'abord une voiture.");
   }
 });
+
+// ✅ Menu Burger (mobile)
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});

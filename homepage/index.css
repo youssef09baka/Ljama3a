@@ -181,3 +181,88 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+
+/* === VERSION MOBILE === */
+@media (max-width: 768px) {
+  /* Navigation mobile */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 20;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  /* Bouton menu burger */
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* Quand le menu est ouvert */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Cacher les liens desktop par défaut */
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  /* Ajustement du conteneur de voitures */
+  .cars-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-card {
+    width: 90%;
+  }
+
+  /* Ajustement du bouton panier */
+  .btn-panier {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  /* Le panier prend toute la largeur sur mobile */
+  .panier {
+    width: 100%;
+  }
+
+  /* Ajustement du texte hero */
+  .hero {
+    padding: 80px 10px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+}
+
+/* === BOUTON BURGER === */
+.menu-toggle {
+  display: none; /* Caché sur PC */
+}
+
+/* Affiché uniquement sur mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
