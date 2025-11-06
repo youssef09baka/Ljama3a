@@ -64,9 +64,16 @@ menuToggle.addEventListener('click', () => {
   document.body.classList.toggle('menu-open');
 });
 
-// Fermer le menu en cliquant sur un lien
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
+// ✅ Fermer le menu en cliquant sur un lien
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    // Si le lien est interne (ex: #cars), on défile vers la section
+    if (link.getAttribute('href').startsWith('#')) {
+      e.preventDefault();
+      const section = document.querySelector(link.getAttribute('href'));
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Fermer le menu après le clic
     navLinks.classList.remove('active');
     document.body.classList.remove('menu-open');
   });
