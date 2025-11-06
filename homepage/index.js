@@ -5,11 +5,11 @@ const panierItems = document.getElementById('panierItems');
 const viderPanier = document.getElementById('viderPanier');
 const payer = document.getElementById('payer');
 
-// Ouvrir / Fermer panier
+// 🛒 Ouvrir / Fermer le panier
 openPanier.addEventListener('click', () => panier.classList.add('active'));
 closePanier.addEventListener('click', () => panier.classList.remove('active'));
 
-// Ajouter au panier
+// 🧾 Ajouter au panier
 document.querySelectorAll('.btn-louer').forEach(button => {
   button.addEventListener('click', () => {
     const card = button.closest('.car-card');
@@ -39,16 +39,14 @@ document.querySelectorAll('.btn-louer').forEach(button => {
       }
     });
   });
-
-  
 });
 
-// Vider le panier
+// 🗑️ Vider le panier
 viderPanier.addEventListener('click', () => {
   panierItems.innerHTML = '<p class="vide">Aucun véhicule ajouté.</p>';
 });
 
-// Paiement
+// 💳 Paiement
 payer.addEventListener('click', () => {
   if (panierItems.querySelector('.panier-item')) {
     alert("💳 Merci pour votre confiance ! Vous allez être redirigé vers la page de paiement.");
@@ -57,10 +55,19 @@ payer.addEventListener('click', () => {
   }
 });
 
-// ✅ Menu Burger (mobile)
+// 📱 Menu latéral coulissant
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+});
+
+// Fermer le menu en cliquant sur un lien
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  });
 });
