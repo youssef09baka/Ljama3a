@@ -1,3 +1,4 @@
+// ==================== PANIER ====================
 const panier = document.getElementById('panier');
 const openPanier = document.getElementById('openPanier');
 const closePanier = document.getElementById('closePanier');
@@ -5,16 +6,14 @@ const panierItems = document.getElementById('panierItems');
 const viderPanier = document.getElementById('viderPanier');
 const payer = document.getElementById('payer');
 
-// 🛒 Ouvrir / Fermer le panier
-openPanier.addEventListener('click', () => panier.classList.add('active'));
-closePanier.addEventListener('click', () => panier.classList.remove('active'));
+openPanier && openPanier.addEventListener('click', () => panier.classList.add('active'));
+closePanier && closePanier.addEventListener('click', () => panier.classList.remove('active'));
 
-// 🧾 Ajouter au panier
 document.querySelectorAll('.btn-louer').forEach(button => {
   button.addEventListener('click', () => {
     const card = button.closest('.car-card');
-    const nom = card.querySelector('h3').innerText;
-    const imgSrc = card.querySelector('img').src;
+    const nom = card.querySelector('h3')?.innerText || 'Véhicule';
+    const imgSrc = card.querySelector('img')?.src || '';
 
     alert(`✅ La voiture "${nom}" a été ajoutée à votre panier avec succès.`);
 
@@ -41,13 +40,11 @@ document.querySelectorAll('.btn-louer').forEach(button => {
   });
 });
 
-// 🗑️ Vider le panier
-viderPanier.addEventListener('click', () => {
+viderPanier && viderPanier.addEventListener('click', () => {
   panierItems.innerHTML = '<p class="vide">Aucun véhicule ajouté.</p>';
 });
 
-// 💳 Paiement
-payer.addEventListener('click', () => {
+payer && payer.addEventListener('click', () => {
   if (panierItems.querySelector('.panier-item')) {
     alert("💳 Merci pour votre confiance ! Vous allez être redirigé vers la page de paiement.");
   } else {
@@ -55,33 +52,46 @@ payer.addEventListener('click', () => {
   }
 });
 
-// 📱 MENU BURGER MOBILE
+// ==================== MENU MOBILE ====================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
-// Ouvrir / fermer le menu
-menuToggle.addEventListener('click', () => {
+// (optionnel mais sûr) s'assurer que le menu est cliquable au-dessus de tout
+if (navLinks) {
+  navLinks.style.zIndex = '9999';
+}
+
+menuToggle && navLinks && menuToggle.addEventListener('click', () => {
+  // ❌ NE PLUS utiliser body.menu-open (overlay qui bloque)
   navLinks.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
 });
 
-// ✅ Fermer le menu après clic sur un lien
-navLinks.querySelectorAll('a').forEach(link => {
+// Fermer le menu après clic + naviguer
+document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
+    const href = link.getAttribute('href') || '';
+
     if (href.startsWith('#')) {
-      // Si le lien est interne (#cars, etc.), on défile vers la section
       e.preventDefault();
-      const section = document.querySelector(href);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+      if (href === '#top' || href === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const section = document.querySelector(href);
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Si c’est un lien externe (/Login/index.html), on redirige normalement
+      // ex: /Login/index.html
       window.location.href = href;
     }
-    // Fermer le menu après le clic
+
+    // refermer le menu
     navLinks.classList.remove('active');
-    document.body.classList.remove('menu-open');
   });
+});
+
+// Sécurité: si on repasse en desktop, on ferme le menu
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && navLinks) {
+    navLinks.classList.remove('active');
+  }
 });
