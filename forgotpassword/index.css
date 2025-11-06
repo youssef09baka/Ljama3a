@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url("../loginpage/asset/bmw.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 40px 45px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.brand-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.brand-name span {
+    color: #00bcd4;
+}
+.brand-slogan {
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-bottom: 25px;
+}
+
+.card-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.card-header p {
+    font-size: 14px;
+    color: #bdbdbd;
+    margin-bottom: 25px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.field .label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #e0e0e0;
+}
+.field input {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+.field input:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.btn {
+    width: 100%;
+    background: #00bcd4;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+    background: #0097a7;
+    transform: scale(1.03);
+}
+
+.register {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 25px;
+}
+.register a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* Version mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 20px; /* espace autour pour les petits écrans */
+        background-size: cover;
+    }
+
+    .card {
+        width: 90%; /* prend presque toute la largeur */
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .brand-name {
+        font-size: 24px;
+    }
+
+    .brand-slogan {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .card-header h1 {
+        font-size: 20px;
+    }
+
+    .card-header p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .field .label {
+        font-size: 12px;
+    }
+
+    .field input {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .register {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+}
+

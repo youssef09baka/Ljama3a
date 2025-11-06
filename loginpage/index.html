@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoRent - Connexion</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <section class="card">
+        <div class="brand">
+            <h2 class="brand-name">Auto<span>Rent</span></h2>
+            <p class="brand-slogan">Drive the Future</p>
+        </div>
+        <header class="card-header">
+            <h1>Connexion</h1>
+            <p>Accès sécurisé — Espace client</p>
+        </header>
+        <form class="login-form" action="#" method="post" autocomplete="on">
+            <label class="field">
+                <span class="label">Adresse e-mail</span>
+                <input type="email" name="email" required placeholder="prenom.nom@domaine.com">
+            </label>
+            <label class="field">
+                <span class="label">Mot de passe</span>
+                <input type="password" name="password" required placeholder="••••••••">
+            </label>
+            <div class="options">
+                <label class="remember">
+                    <input type="checkbox" name="remember">
+                    <span>Se souvenir de moi</span>
+                </label>
+                <a class="forgot" href="../forgotpassword/index.html">Mot de passe oublié ?</a>
+
+            </div>
+            <button class="btn" type="submit">Se connecter</button>
+        </form>
+        <p class="register">Pas encore inscrit ? <a href="../registrerpage/index.html">Créer un compte</a></p>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>

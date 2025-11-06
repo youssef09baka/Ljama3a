@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoRent - Inscription</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <section class="card">
+        <div class="brand">
+            <h2 class="brand-name">Auto<span>Rent</span></h2>
+            <p class="brand-slogan">Drive the Future</p>
+        </div>
+        <header class="card-header">
+            <h1>Créer un compte</h1>
+            <p>Rejoignez AutoRent et profitez de la route autrement</p>
+        </header>
+
+        <form class="register-form" action="#" method="post" autocomplete="on">
+            <label class="field">
+                <span class="label">Nom complet</span>
+                <input type="text" name="fullname" required placeholder="Votre nom complet">
+            </label>
+
+            <label class="field">
+                <span class="label">Adresse e-mail</span>
+                <input type="email" name="email" required placeholder="prenom.nom@domaine.com">
+            </label>
+
+            <label class="field">
+                <span class="label">Mot de passe</span>
+                <input type="password" name="password" required placeholder="••••••••">
+            </label>
+
+            <label class="field">
+                <span class="label">Confirmer le mot de passe</span>
+                <input type="password" name="confirm" required placeholder="••••••••">
+            </label>
+
+            <button class="btn" type="submit">S'inscrire</button>
+        </form>
+
+        <p class="register">Déjà un compte ? <a href="../loginpage/index.html">Se connecter</a></p>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
